@@ -19,4 +19,5 @@ High score page:
 <img width="968" alt="Screenshot 2025-04-08 at 5 36 16 PM" src="https://github.com/user-attachments/assets/de8ea0a2-bbb8-4b0d-b075-8dd85a3a52fb" />
 
 Gameplay page:
-<img width="940" alt="Screenshot 2025-04-08 at 5 36 32 PM" src="https://github.com/user-attachments/assets/01033513-f36c-416b-9449-4a02b481f5bb" />
+<img width="936" alt="Screenshot 2025-04-08 at 5 41 13 PM" src="https://github.com/user-attachments/assets/70581b94-0ea0-4fa9-b035-3a456558430a" />
+
