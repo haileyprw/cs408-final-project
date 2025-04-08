@@ -9,7 +9,14 @@ Some stretch goals for this project include moving snake obstacles and color cus
 I am very excited to get started on this project. I forsee a main challenge being the animation. I think the backend work will be difficult, but doable, however, my attention to detail is going to make me frustrated if I cannot get the snakes to look like how they do in the actual game. I also forsee the bot snakes being a challenge (if I have time to implement them). I want them to move how other users would, but that is difficult to do  when there aren't actually people playing as them. I want to game to be fun but I am worried it will be too boring if I cannot get the animation or bot obstacles to behave properly. While I have these concerns, I think this project sounds like a fun challenge and I am very excited to get started.
 
 ## Project Wireframe
+Landing page:
+<img width="1174" alt="Screenshot 2025-04-08 at 5 35 08 PM" src="https://github.com/user-attachments/assets/e1b5816a-52fa-4d71-b080-42e0e737604a" />
 
-TODO: Replace the wireframe below with you own design.
+Change skin page:
+<img width="962" alt="Screenshot 2025-04-08 at 5 35 51 PM" src="https://github.com/user-attachments/assets/26ce9388-586a-4312-8be6-02e3050e6091" />
 
-![wireframe](wireframe-example.png)
+High score page:
+<img width="968" alt="Screenshot 2025-04-08 at 5 36 16 PM" src="https://github.com/user-attachments/assets/de8ea0a2-bbb8-4b0d-b075-8dd85a3a52fb" />
+
+Gameplay page:
+<img width="940" alt="Screenshot 2025-04-08 at 5 36 32 PM" src="https://github.com/user-attachments/assets/01033513-f36c-416b-9449-4a02b481f5bb" />
