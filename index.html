@@ -1,17 +1,33 @@
+<!-- Landing Page -->
 <!doctype html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>Hello World!</title>
+  <title>slither.io</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-  <h1>HTML Rocks!</h1>
-  <img src="img/compile.jpeg">
+  <h1><span class="slither">slither</span><span class="io">.io</span></h1>
+  <input class="nickname" type="text" id="username" placeholder="Nickname">
+  <button class="play-button">Play</button>
+
+  <div class="changeSkin">
+    <img src="./img/change_skin.png">
+    <label>Change Skin</label>
+  </div>
+
+  <div class="highScore">
+    <img src="./img/high_score.png">
+    <label>High Scores</label>
+  </div>
+
   <script type="module" src="js/main.js"></script>
 </body>
 
