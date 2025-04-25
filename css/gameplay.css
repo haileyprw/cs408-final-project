@@ -1,0 +1,78 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+  }
+
+canvas {
+    display: block;
+}
+body {
+    background: #161c22;
+    color: white;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.leaderboard {
+    position: absolute;
+    right: 20px;
+    width: 250px;
+    padding: 10px;
+  }
+
+.leaderboard h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.leaderboard ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 2px 0;
+}
+
+.rank {
+    width: 20px;
+    text-align: left;
+}
+
+.name {
+    flex: 1;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.score {
+    text-align: right;
+    min-width: 50px;
+}
+
+.personal-stats {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: grey;
+    text-align: left;
+}
+
+.personal-stats, .length-text {
+    font-size: 16px;
+    padding-bottom: 3px;
+}
+
+.personal-stats, .rank-text {
+    font-size: 12px;
+}
