@@ -1,0 +1,26 @@
+body {
+    background: #161c22;
+  }
+
+.save-button { 
+    /* Positioning */
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* Styling */
+    background: linear-gradient(to bottom, #56ac81, #377054);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  }
+  
+  .save-button:hover {
+    background: linear-gradient(to bottom, #75ffd6, #4bb089);
+  }
