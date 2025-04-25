@@ -7,15 +7,35 @@
   <title>slither.io</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/index-style.css">
+  <link rel="stylesheet" href="css/gameplay.css">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  <canvas id="gameCanvas"></canvas>
+  <div class="leaderboard">
+    <h2>Leaderboard:</h2>
+    <ol>
+        <li><span class="rank">#1</span><span class="name">Snake12387456293487562936459723695762378456239845762385746</span><span class="score">1000</span></li>
+        <li><span class="rank">#2</span><span class="name">Snake2</span><span class="score">999</span></li>
+        <li><span class="rank">#3</span><span class="name">Snake3</span><span class="score">800</span></li>
+        <li><span class="rank">#4</span><span class="name">Snake4</span><span class="score">700</span></li>
+        <li><span class="rank">#5</span><span class="name">Snake5</span><span class="score">600</span></li>
+        <li><span class="rank">#6</span><span class="name">Snake6</span><span class="score">500</span></li>
+        <li><span class="rank">#7</span><span class="name">Snake13241</span><span class="score">400</span></li>
+        <li><span class="rank">#8</span><span class="name">Snake7</span><span class="score">200</span></li>
+        <li><span class="rank">#9</span><span class="name">Snake1345252</span><span class="score">22</span></li>
+        <li><span class="rank">#10</span><span class="name">Snake2</span><span class="score">2</span></li>
+    </ol>
+  </div>
 
+  <div class="personal-stats">
+    <div class="length-text">Your length: 22</div>
+    <div class="rank-text">Your rank: 74 of 1000</div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
   <script src="js/main.js"></script>
 </body>
 
