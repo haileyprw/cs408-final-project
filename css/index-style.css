@@ -1,3 +1,4 @@
+/* Dual CSS file for the landing page and endgame page */
 body {
   background: #161c22;
   margin: 0;
@@ -105,4 +106,25 @@ h1 {
 .highScore img {
   width: 70px;
   height: 65px;
+}
+
+/* Game over only */ 
+p {
+    /* Positioning */
+    position: absolute;
+    top: 32.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Styling */
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p span {
+    /* Styling */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
 }
