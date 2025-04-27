@@ -67,6 +67,19 @@ function generateObstacle() {
     return { x, y, vx, vy };
 }
 
+// // helper function to submit score to database
+// function submitScore(id, score) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.open("PUT", "https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames");
+//     xhr.setRequestHeader("Content-Type", "application/json");
+//     xhr.send(JSON.stringify({ id, score }));
+// }
+
+// // game over
+// function gameOver(currentScore) {
+//     submitScore(id, currentScore);
+// }
+
 // Generate initial obstacles
 for (let i = 0; i < numObstacles; i++) {
     obstacles.push(generateObstacle());
@@ -101,6 +114,7 @@ function update() {
 
     if (distanceFromCenter > map.radius - snake.segmentRadius) {
         // collision
+        // gameOver(currentScore);
         window.location.href = './end-game.html';
         return;
     }
@@ -151,6 +165,7 @@ function update() {
     
         if (distance < snake.segmentRadius + obstacleRadius) {
             // collision
+            // gameOver(currentScore);
             window.location.href = './end-game.html';
             return;
         }
@@ -166,6 +181,10 @@ function update() {
             dots.push(generateDot());
         }
     }
+
+    // Update length text
+    const currentScore = snake.length;
+    document.getElementById('length-text').innerText = `Your length: ${currentScore}`;
 }
 
 function draw() {
