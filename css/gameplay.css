@@ -65,13 +65,5 @@ body {
     left: 10px;
     color: grey;
     text-align: left;
-}
-
-.personal-stats, .length-text {
     font-size: 16px;
-    padding-bottom: 3px;
-}
-
-.personal-stats, .rank-text {
-    font-size: 12px;
 }
