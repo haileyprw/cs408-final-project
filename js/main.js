@@ -1,10 +1,10 @@
 document.querySelector(".play-button").addEventListener("click", function (event) {
     event.preventDefault();
   
-    const nickname = document.getElementById("username").value;
+    let nickname = document.getElementById("username").value;
   
     if (!nickname) {
-      nickname = " ";
+      nickname = "";
     }
   
     const id = Date.now().toString();
