@@ -2,6 +2,7 @@ document.querySelector(".play-button").addEventListener("click", function (event
     event.preventDefault();
   
     let nickname = document.getElementById("username").value;
+    localStorage.setItem('user', nickname); // Save it globally
   
     if (!nickname) {
       nickname = "";
@@ -13,8 +14,7 @@ document.querySelector(".play-button").addEventListener("click", function (event
     const data = {
       id: id,
       username: nickname,
-      score: "",
-      color: "#hw320j"
+      score: ""
     };
   
     let xhr = new XMLHttpRequest();

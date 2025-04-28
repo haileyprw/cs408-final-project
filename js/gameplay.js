@@ -67,9 +67,11 @@ function generateObstacle() {
 // game over
 function gameOver(score) {
 
-    let id = localStorage.getItem('playerId'); // Retrieve it
+    let id = localStorage.getItem('playerId'); // Retrieve id
+    let nickname = localStorage.getItem('user'); // Retrieve name
 
     const data = {
+        username: nickname,
         id: id,
         score: score,
       };
