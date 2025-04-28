@@ -1,3 +1,49 @@
 body {
     background: #161c22;
+    margin: 0;
+    font-family: 'Comic Neue', sans-serif;
+    color: white;
+  }
+  
+h1 {
+    /* Positioning */
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  
+    /* Styling */
+    font-size: 120px;
+    font-weight: bold;
 }
+
+.delete-button { 
+    /* Styling */
+    background: linear-gradient(to bottom, #56ac81, #377054);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+  
+.delete-button:hover {
+    background: linear-gradient(to bottom, #75ffd6, #4bb089);
+}
+
+#high-scores-table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 18px;
+  }
+  
+  #high-scores-table th,
+  #high-scores-table td {
+    padding: 12px 20px;
+    text-align: center;
+  }
