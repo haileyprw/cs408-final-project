@@ -28,5 +28,30 @@ document.querySelector(".play-button").addEventListener("click", function (event
     };
   
     xhr.send(JSON.stringify(data));
-  });
+});
   
+document.addEventListener("DOMContentLoaded", function () {
+    const playerId = localStorage.getItem("playerId");
+
+    if (playerId) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", `https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames/${playerId}`);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.status === 200) {
+                let data = JSON.parse(xhr.responseText);
+                let score = data.score;
+
+                let finalScoreElement = document.querySelector(".final-score");
+                if (finalScoreElement) {
+                    if (score !== null) {
+                    finalScoreElement.textContent = score;
+                    }
+                }
+            }
+        };
+
+        xhr.send();
+    }
+});
