@@ -7,12 +7,13 @@ document.querySelector(".play-button").addEventListener("click", function (event
       nickname = "";
     }
   
-    const id = Date.now().toString();
+    let id = Date.now().toString();
+    localStorage.setItem('playerId', id); // Save it globally
   
     const data = {
       id: id,
       username: nickname,
-      score: 23,
+      score: "",
       color: "#hw320j"
     };
   

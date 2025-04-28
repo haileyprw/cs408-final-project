@@ -3,17 +3,12 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// // Generates random color
-// function randomRGB() {
-//     return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
-// }
-
 // Snake properties
 const snake = {
     segments: [{ x: 0, y: 0 }], // list of body circles, head is at 0
     segmentRadius: 20,
     length: 20,
-    speed: 4,
+    speed: 4
 };
 
 // Circular map
@@ -36,6 +31,8 @@ const dotRadius = 5;
 const obstacles = [];
 const numObstacles = 100;
 const obstacleRadius = 25;
+
+let currentScore = 20;
 
 // Helper function to generate energy dots
 function generateDot() {
@@ -67,18 +64,27 @@ function generateObstacle() {
     return { x, y, vx, vy };
 }
 
-// // helper function to submit score to database
-// function submitScore(id, score) {
-//     let xhr = new XMLHttpRequest();
-//     xhr.open("PUT", "https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames");
-//     xhr.setRequestHeader("Content-Type", "application/json");
-//     xhr.send(JSON.stringify({ id, score }));
-// }
+// game over
+function gameOver(score) {
 
-// // game over
-// function gameOver(currentScore) {
-//     submitScore(id, currentScore);
-// }
+    let id = localStorage.getItem('playerId'); // Retrieve it
+
+    const data = {
+        id: id,
+        score: score,
+      };
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("PUT", "https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.status === 200) {
+            window.location.href = "./end-game.html";
+        }
+    };
+  
+    xhr.send(JSON.stringify(data));
+}
 
 // Generate initial obstacles
 for (let i = 0; i < numObstacles; i++) {
@@ -114,8 +120,8 @@ function update() {
 
     if (distanceFromCenter > map.radius - snake.segmentRadius) {
         // collision
-        // gameOver(currentScore);
-        window.location.href = './end-game.html';
+        currentScore = snake.length;
+        gameOver(currentScore);
         return;
     }
 
@@ -165,8 +171,8 @@ function update() {
     
         if (distance < snake.segmentRadius + obstacleRadius) {
             // collision
-            // gameOver(currentScore);
-            window.location.href = './end-game.html';
+            currentScore = snake.length;
+            gameOver(currentScore);
             return;
         }
     }
@@ -182,8 +188,8 @@ function update() {
         }
     }
 
-    // Update length text
-    const currentScore = snake.length;
+    // update score
+    currentScore = snake.length;
     document.getElementById('length-text').innerText = `Your length: ${currentScore}`;
 }
 
