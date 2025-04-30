@@ -34,6 +34,33 @@ const obstacleRadius = 25;
 
 let currentScore = 20;
 
+// Update leaderboard positioning
+document.addEventListener("DOMContentLoaded", function () {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames");
+    xhr.onreadystatechange = function () {
+        if (xhr.status === 200) {
+            const players = JSON.parse(xhr.responseText);
+            players.sort((a, b) => b.score - a.score);
+            const top10 = players.slice(0, 10);
+
+            const list = document.getElementById("leaderboard-list");
+            list.innerHTML = `<ol></ol>`;
+
+            top10.forEach((player, index) => {
+                const row = document.createElement("li");
+                row.innerHTML = `
+                    <span class="rank">#${index + 1}</span>
+                    <span class="name">${player.username}</span>
+                    <span class="score">${player.score}</span>
+                `;
+                list.querySelector("ol").appendChild(row);
+            });
+        }
+    };
+    xhr.send();   
+});
+
 // Helper function to generate energy dots
 function generateDot() {
     const angle = Math.random() * 2 * Math.PI;
