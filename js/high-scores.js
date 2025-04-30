@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xhr.onreadystatechange = function () {
       if (xhr.status === 200) {
         const players = JSON.parse(xhr.responseText);
+        players.sort((a, b) => b.score - a.score);
         const table = document.getElementById("high-scores-table");
         table.innerHTML = `
             <tr>
