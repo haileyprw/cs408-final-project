@@ -1,6 +1,5 @@
 // Load all database entries
 document.addEventListener("DOMContentLoaded", function () {
-    const highScoresList = document.getElementById("high-scores-table");
   
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames");
@@ -22,10 +21,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${player.score}</td>
                 <td><button class="delete-button">Delete</button></td>
             `;
+
+            const deleteButton = row.querySelector(".delete-button");
+            deleteButton.addEventListener("click", function () {
+                if (confirm(`Delete player "${player.username}"?`)) {
+                    const deleteXhr = new XMLHttpRequest();
+                    deleteXhr.open("DELETE", `https://j42aj6904i.execute-api.us-east-2.amazonaws.com/nicknames/${player.id}`);
+                    deleteXhr.onreadystatechange = function () {
+                        if (deleteXhr.status === 200) {
+                            row.remove(); // Remove row from table
+                        }
+                    }
+                    deleteXhr.send();
+                }
+            });
             table.appendChild(row);
         });
       }
     };
-  
     xhr.send();
   });
