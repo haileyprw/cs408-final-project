@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const top10 = players.slice(0, 10);
 
             const list = document.getElementById("leaderboard-list");
-            list.innerHTML = `<ol></ol>`;
+            list.innerHTML = "";
 
             top10.forEach((player, index) => {
                 const row = document.createElement("li");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span class="name">${player.username}</span>
                     <span class="score">${player.score}</span>
                 `;
-                list.querySelector("ol").appendChild(row);
+                list.appendChild(row);
             });
         }
     };
