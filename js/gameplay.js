@@ -8,7 +8,7 @@ const snake = {
     segments: [{ x: 0, y: 0 }], // list of body circles, head is at 0
     segmentRadius: 20,
     length: 20,
-    speed: 4
+    speed: 5
 };
 
 // Circular map
@@ -263,8 +263,13 @@ function draw() {
         ctx.beginPath();
         ctx.arc(seg.x + offsetX, seg.y + offsetY, snake.segmentRadius, 0, Math.PI * 2);
 
-        // rainbow gradient default
-        ctx.fillStyle = `hsl(${(i / snake.length) * 360}, 100%, 50%)`;
+        // color selection
+        const colorSetting = localStorage.getItem('snakeColor');
+        if (colorSetting === 'rainbow') {
+            ctx.fillStyle = `hsl(${(i / snake.length) * 360}, 100%, 50%)`;
+        } else {
+            ctx.fillStyle = colorSetting;
+        }
         ctx.fill();
     }
 
