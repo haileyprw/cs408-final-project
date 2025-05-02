@@ -96,10 +96,12 @@ function gameOver(score) {
 
     let id = localStorage.getItem('playerId'); // Retrieve id
     let nickname = localStorage.getItem('user'); // Retrieve name
+    let colorSetting = localStorage.getItem('snakeColor'); // Retrieve color
 
     const data = {
         username: nickname,
         id: id,
+        color: colorSetting,
         score: score,
       };
 
