@@ -2,6 +2,12 @@ document.querySelector(".play-button").addEventListener("click", function (event
     event.preventDefault();
   
     let nickname = document.getElementById("username").value;
+
+    // Sanitize user input
+    nickname = nickname.replace(/</g, "&lt;").replace(/>/g, "&gt;"); // Escape HTML characters
+    nickname = nickname.trim(); // Trim any leading or trailing whitespace
+
+
     localStorage.setItem('user', nickname); // Save it globally
   
     if (!nickname) {
